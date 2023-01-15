@@ -2,3 +2,4 @@
 terraform.tfstate*
 aws_kp.*
 secrets.tfvars
+docker_password.txt

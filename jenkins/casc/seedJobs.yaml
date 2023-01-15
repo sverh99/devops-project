@@ -1,0 +1,13 @@
+jobs:
+  - script: |
+      job('example') {
+        steps {
+            shell('echo Hello World!')
+        }
+      }
+  - script: |
+      job('example-2') {
+        steps {
+            shell('echo running second example!')
+        }
+      }

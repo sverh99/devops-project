@@ -12,9 +12,8 @@ terraform {
 
 
 provider "aws" {
-  region     = var.aws_region
-  access_key = "AKIAVRLPV52TICZB6JS2"
-  secret_key = "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"
+  region  = var.aws_region
+  profile = "devops-lab"
 }
 
 
@@ -32,7 +31,9 @@ module "security_group" {
 }
 
 module "ec2_instance" {
-  source         = "./modules/compute"
-  security_group = module.security_group.sg_id
-  public_subnet  = module.vpc.public_subnet_id
+  source                   = "./modules/compute"
+  security_group           = module.security_group.sg_id
+  public_subnet            = module.vpc.public_subnet_id
+  docker_registry_password = var.docker_registry_password
+  docker_registry_username = var.docker_registry_username
 }

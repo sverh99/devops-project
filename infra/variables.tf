@@ -19,3 +19,15 @@ variable "my_ip" {
   type        = string
   sensitive   = true
 }
+
+variable "docker_registry_password" {
+  type = string
+  sensitive = true
+  description = "Docker registry password"
+}
+
+variable "docker_registry_username" {
+  description = "Docker registry username"
+  type = string
+  default = "sverh123"
+}
